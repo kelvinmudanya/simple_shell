@@ -14,5 +14,5 @@ void built_in(char *string, char **argv, char **env)
 		exit(0);
 	}
 	if (_strcmp(argv[0], "env") == 0)
-		printenv(env);
+		printenv(env, argv);
 }
