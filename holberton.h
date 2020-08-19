@@ -43,8 +43,4 @@ int func_ctrl_d(char *string, ssize_t read);
 /* function signal */
 void sighandler(int sig);
 
-/* function builint cd */
-int func_cd(char **string, char **env);
-char *_getenv(char *string, char **env);
-
 #endif

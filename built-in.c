@@ -15,6 +15,4 @@ void built_in(char *string, char **argv, char **env)
 	}
 	if (_strcmp(argv[0], "env") == 0)
 		printenv(env);
-	if (_strcmp(argv[0], "cd") == 0)
-		func_cd(argv, env);
 }
