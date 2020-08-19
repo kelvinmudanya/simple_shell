@@ -13,7 +13,7 @@ char *read_command(char **env)
 	char **args = NULL;
 	ssize_t read = 0;
 	int i = 0, status, num_arg;
-	static int count;
+	static int count, exit;
 
 	if (signal(SIGINT, sighandler) == SIG_ERR)
 		perror("error:\n");
@@ -23,7 +23,7 @@ char *read_command(char **env)
 			simple_print_shell("shell$ ");
 		read = getline(&string, &bufsize, stdin);
 		++count;
-		if (func_ctrl_d(string, read) == 1)
+		if (func_ctrl_d(string, read) == 127)
 			continue;
 		rm_new_line(string);
 		args = _parser(string);
@@ -31,7 +31,7 @@ char *read_command(char **env)
 			num_arg++;
 		built_in(string, args, env);
 		status = _path(args[0], args, env);
-		forkwaitexec(status, args, &count);
+		forkwaitexec(status, args, &count, &exit);
 		{
 			fflush(stdin);
 		}
