@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * read_command - read a line from stdin
  * @env: the argument passed
