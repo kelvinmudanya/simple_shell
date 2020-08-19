@@ -5,9 +5,14 @@
  * @env: environment variable
  * Return: Always 0 in success. Otherwise 1.
  */
-int printenv(char **env)
+int printenv(char **env, char **argv)
 {
-	unsigned int i;
+        unsigned int i;
+
+        if (argv[1] != NULL)
+        {
+                return (EXIT_SUCCESS);
+        }
 
 	for (i = 0; env[i] != NULL; i++)
 	{
