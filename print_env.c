@@ -8,22 +8,17 @@
  */
 int printenv(char **env, char **argv)
 {
-	extern char **environ;
 	unsigned int i;
-	char **environment;
-	(void)**env;
 
-
+	if (env == NULL || env[0] == NULL)
+		return (1);
 	if (argv[1] != NULL)
 	{
 		return (-1);
 	}
-	environment = environ;
-	if (!environment || !environ)
-		return (1);
-	for (i = 0; environment[i] != NULL; i++)
+	for (i = 0; env[i] != NULL; i++)
 	{
-		print_string(environment[i]);
+		print_string(env[i]);
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	return (0);
