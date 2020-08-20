@@ -12,14 +12,16 @@ int printenv(char **env, char **argv)
 
 	if (argv[1] != NULL)
 	{
-		return (EXIT_SUCCESS);
+		return (-1);
 	}
+	if (!env)
+		return (-1);
 	for (i = 0; env[i] != NULL; i++)
 	{
 		print_string(env[i]);
 		write(STDOUT_FILENO, "\n", 1);
 	}
-	return (EXIT_SUCCESS);
+	return (0);
 }
 /**
  *  print_string - auxiliar function to print each linea of env
