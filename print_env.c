@@ -8,7 +8,12 @@ void printenv(char **env)
 {
 	unsigned int runner;
 	unsigned int lenght;
+        unsigned int i;
 
+        if (argv[1] != NULL)
+        {
+                return (127);
+        }
 	if (environ == NULL || *environ[0] == '\0')
 		return;
 	environ = env;

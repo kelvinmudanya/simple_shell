@@ -4,6 +4,7 @@
  * @string: pointer with the line saved
  * @argv: the arguments passed
  * @env: environment variable
+ * @ex_it: integer
  */
 void built_in(char *string, char **argv, char **env, int *ex_it)
 {
