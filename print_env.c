@@ -2,29 +2,23 @@
 /**
  * printenv - prints the environment
  * @env: environment variable
+ * @argv: arguments passed
  * Return: Always 0 in success. Otherwise 1.
  */
-void printenv(char **env)
+int printenv(char **env, char **argv)
 {
-	unsigned int runner;
-	unsigned int lenght;
-        unsigned int i;
+	unsigned int i;
 
-        if (argv[1] != NULL)
-        {
-                return (127);
-        }
-	if (environ == NULL || *environ[0] == '\0')
-		return;
-	environ = env;
-	runner = 0;
-	while (environ[runner] != NULL)
+	if (argv[1] != NULL)
 	{
-		lenght = _strlen(environ[runner]);
-		write(STDOUT_FILENO, environ[runner], lenght);
-		write(STDOUT_FILENO, "\n", 1);
-		runner++;
+		return (EXIT_SUCCESS);
 	}
+	for (i = 0; env[i] != NULL; i++)
+	{
+		print_string(env[i]);
+		write(STDOUT_FILENO, "\n", 1);
+	}
+	return (EXIT_SUCCESS);
 }
 /**
  *  print_string - auxiliar function to print each linea of env

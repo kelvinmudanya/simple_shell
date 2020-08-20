@@ -14,8 +14,6 @@
 #include <fcntl.h>
 #include <signal.h>
 
-extern char **environ;
-
 /* string manipulations functions */
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
@@ -35,7 +33,7 @@ void rm_new_line(char *string);
 int _path(char *args, char **argv, char **env);
 char *print_path(char *der, char *args);
 char **_parser(char *string);
-void printenv(char **env);
+int printenv(char **env, char **argv);
 void built_in(char *string, char **argv, char **env, int *ex_it);
 void simple_print_shell(char *string);
 void print_count(int *count);
