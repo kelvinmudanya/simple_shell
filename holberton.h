@@ -14,8 +14,6 @@
 #include <fcntl.h>
 #include <signal.h>
 
-extern char **environ;
-
 /* string manipulations functions */
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
