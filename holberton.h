@@ -28,7 +28,7 @@ int main(int argc, char *argv[], char *env[]);
 int shell_loop(char **env);
 char *read_command(char **env);
 char **split_command(char *string);
-void forkwaitexec(int status, char **argv, int *count, int *exit);
+void forkwaitexec(int status, char **argv, int *count, int *stad_exit);
 void rm_new_line(char *string);
 int _path(char *args, char **argv, char **env);
 char *print_path(char *der, char *args);
@@ -38,7 +38,7 @@ int printenv(char **env, char **argv);
 void simple_print_shell(char *string);
 void print_count(int *count);
 int _putchar(char c);
-int func_ctrl_d(char *string, ssize_t read);
+int func_ctrl_d(char *string, ssize_t read, int *stad_exit);
 
 /* function signal */
 void sighandler(int sig);
