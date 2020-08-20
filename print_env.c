@@ -1,25 +1,30 @@
 #include "holberton.h"
-
 /**
  * printenv - prints the environment
  * @env: environment variable
  * Return: Always 0 in success. Otherwise 1.
  */
-int printenv(char **env, char **argv)
+void printenv(char **env)
 {
+	unsigned int runner;
+	unsigned int lenght;
         unsigned int i;
 
         if (argv[1] != NULL)
         {
                 return (127);
         }
-
-	for (i = 0; env[i] != NULL; i++)
+	if (environ == NULL || *environ[0] == '\0')
+		return;
+	environ = env;
+	runner = 0;
+	while (environ[runner] != NULL)
 	{
-		print_string(env[i]);
+		lenght = _strlen(environ[runner]);
+		write(STDOUT_FILENO, environ[runner], lenght);
 		write(STDOUT_FILENO, "\n", 1);
+		runner++;
 	}
-	return (EXIT_SUCCESS);
 }
 /**
  *  print_string - auxiliar function to print each linea of env
