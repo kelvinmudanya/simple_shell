@@ -6,11 +6,9 @@
  * @env: environment variable
  * Return: status of the proccess or 1 in error
  */
-int shell_loop(char **argv, char **env)
+int shell_loop(char **env)
 {
 	char *args = NULL;
-
-	(void)**argv;
 
 	do {
 		args = read_command(env);

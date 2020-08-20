@@ -5,23 +5,25 @@
  * @status: receiving the status true or false
  * @count: variable that counts the commands passed
  */
-void forkwaitexec(int status, char **args, int *count)
+void forkwaitexec(int status, char **args, int *count, int *stad_exit)
 {
 	if (status == 2)
 	{
 		if (access(args[0], X_OK) == 0)
+		{
 			if (fork() == 0)
 				execve(args[0], args, NULL);
 			else
-			{
 				wait(NULL);
-			}
+			*stad_exit = 0;
+		}
 		else if (access(args[0], F_OK) != 0)
 		{
 			print_string("sh: ");
 			print_count(count);
 			print_string(": ");
 			perror(args[0]);
+			*stad_exit = 127;
 		}
 		else if (access(args[0], F_OK) == 0 &&
 			 access(args[0], X_OK) != 0)
@@ -30,6 +32,7 @@ void forkwaitexec(int status, char **args, int *count)
 			print_count(count);
 			print_string(": ");
 			perror(args[0]);
+			*stad_exit = 126;
 		}
 	}
 	free(args);

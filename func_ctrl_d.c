@@ -6,24 +6,25 @@
  * @read: size of the saved string
  * Return: 0 success, otherwise 1
  */
-int func_ctrl_d(char *string, ssize_t read)
+int func_ctrl_d(char *string, ssize_t read, int *stad_exit)
 {
 	int i = 0;
 
 	if (read == EOF && isatty(STDIN_FILENO) == 0)
 	{
 		free(string);
-		exit(EXIT_SUCCESS);
+		exit(*stad_exit);
 	}
 	if (read == EOF)
 	{
 		free(string);
 		write(STDOUT_FILENO, "\n", 1);
-		exit(EXIT_SUCCESS);
+		exit(*stad_exit);
 	}
 	if (_strcmp(string, "\n") == 0)
 	{
-		return (1);
+		*stad_exit = 0;
+		return (127);
 	}
 	while (string[i] != '\n')
 	{
@@ -31,5 +32,6 @@ int func_ctrl_d(char *string, ssize_t read)
 			return (0);
 		++i;
 	}
-	return (1);
+	*stad_exit = 0;
+	return (127);
 }

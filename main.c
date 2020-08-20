@@ -9,8 +9,8 @@
  */
 int main(int argc, char **argv, char **env)
 {
-	(void)argc;
+	(void)argc, (void)**argv;
 
-	shell_loop(argv, env);
+	shell_loop(env);
 	return (EXIT_SUCCESS);
 }
