@@ -13,8 +13,7 @@ char *read_command(char **env)
 	char **args = NULL;
 	ssize_t read = 0;
 	int i = 0, status, num_arg;
-	int stad_exit;
-	static int count;
+	static int count, stad_exit;
 
 	if (signal(SIGINT, sighandler) == SIG_ERR)
 		perror("error:\n");
