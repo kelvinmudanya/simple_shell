@@ -11,7 +11,8 @@ int printenv(char **env, char **argv)
 
         if (argv[1] != NULL)
         {
-                return (EXIT_SUCCESS);
+		perror(argv[0]);
+                return (127);
         }
 
 	for (i = 0; env[i] != NULL; i++)
