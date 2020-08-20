@@ -7,7 +7,7 @@
  */
 void forkwaitexec(int status, char **args, int *count)
 {
-	if (status == 1)
+	if (status == 2)
 	{
 		if (access(args[0], X_OK) == 0)
 			if (fork() == 0)
