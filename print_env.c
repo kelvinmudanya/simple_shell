@@ -6,26 +6,20 @@
  */
 void printenv(char **env)
 {
-        unsigned int runner;
-        unsigned int lenght;
+	unsigned int runner;
+	unsigned int lenght;
 
-        if (environ == NULL || *environ[0] == '\0')
-                return;
-
-        environ = env;
-        runner = 0;
-        while (environ[runner] != NULL)
-        {
-<<<<<<< HEAD
-                lenght = _strlen(environ[runner]);
-                write(STDOUT_FILENO, environ[runner], lenght);
-                write(STDOUT_FILENO, "\n", 1);
-                runner++;
-=======
-		perror(argv[0]);
-                return (127);
->>>>>>> cb0547de04dedd417ca9153e6d051e28dbebfd78
-        }
+	if (environ == NULL || *environ[0] == '\0')
+		return;
+	environ = env;
+	runner = 0;
+	while (environ[runner] != NULL)
+	{
+		lenght = _strlen(environ[runner]);
+		write(STDOUT_FILENO, environ[runner], lenght);
+		write(STDOUT_FILENO, "\n", 1);
+		runner++;
+	}
 }
 /**
  *  print_string - auxiliar function to print each linea of env

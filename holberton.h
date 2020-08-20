@@ -35,13 +35,8 @@ void rm_new_line(char *string);
 int _path(char *args, char **argv, char **env);
 char *print_path(char *der, char *args);
 char **_parser(char *string);
-<<<<<<< HEAD
-void built_in(char *string, char **argv, char **env);
 void printenv(char **env);
-=======
 void built_in(char *string, char **argv, char **env, int *ex_it);
-int printenv(char **env, char **argv);
->>>>>>> cb0547de04dedd417ca9153e6d051e28dbebfd78
 void simple_print_shell(char *string);
 void print_count(int *count);
 int _putchar(char c);
