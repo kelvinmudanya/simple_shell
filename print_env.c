@@ -11,7 +11,6 @@ int printenv(char **env, char **argv)
 
         if (argv[1] != NULL)
         {
-		perror(argv[0]);
                 return (127);
         }
 
