@@ -15,10 +15,10 @@ int func_ctrl_d(char *string, ssize_t read, int *stad_exit)
 		free(string);
 		exit(*stad_exit);
 	}
-	if (read == EOF)
+	if (read == EOF && isatty(STDIN_FILENO) == 1)
 	{
-		free(string);
 		write(STDOUT_FILENO, "\n", 1);
+		free(string);
 		exit(*stad_exit);
 	}
 	if (_strcmp(string, "\n") == 0)
