@@ -24,7 +24,7 @@ int func_ctrl_d(char *string, ssize_t read, int *stad_exit)
 	if (_strcmp(string, "\n") == 0)
 	{
 		*stad_exit = 0;
-		return (0);
+		return (127);
 	}
 	while (string[i] != '\n')
 	{
@@ -33,5 +33,5 @@ int func_ctrl_d(char *string, ssize_t read, int *stad_exit)
 		++i;
 	}
 	*stad_exit = 0;
-	return (0);
+	return (127);
 }
