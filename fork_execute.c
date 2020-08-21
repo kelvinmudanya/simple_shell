@@ -25,7 +25,7 @@ void forkwaitexec(int status, char **args, int *count, int *stad_exit)
 			print_count(count);
 			print_string(": ");
 			perror(args[0]);
-			*stad_exit = 127;
+			*stad_exit = 2;
 		}
 		if (access(args[0], F_OK) == 0 && access(args[0], X_OK) != 0)
 		{
