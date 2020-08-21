@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * built_in - compare argv passed with the builtins commands
  * @string: pointer with the line saved

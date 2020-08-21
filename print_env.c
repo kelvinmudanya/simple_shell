@@ -14,13 +14,15 @@ int printenv(char **env, char **argv)
 		return (1);
 	if (argv[1] != NULL)
 	{
-		return (-1);
+		return (1);
 	}
 	for (i = 0; env[i] != NULL; i++)
 	{
 		print_string(env[i]);
 		write(STDOUT_FILENO, "\n", 1);
 	}
+
+	env[i] = NULL;
 	return (0);
 }
 /**
@@ -30,11 +32,9 @@ int printenv(char **env, char **argv)
  */
 void print_string(char *env)
 {
-	int i, print;
+	int i;
 
 	for (i = 0; env[i] != '\0'; i++)
 		;
-	print = write(STDOUT_FILENO, env, i);
-	if (print == EOF)
-		return;
+	write(STDOUT_FILENO, env, i);
 }

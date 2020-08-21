@@ -1,10 +1,9 @@
 #include "holberton.h"
-
 /**
  * func_ctrl_d - allows use of ctrl d as way of shutting down shell
  * @string: the argument passed
  * @read: size of the saved string
- * @stad_exit: integer
+ * @stad_exit: integer static var
  * Return: 0 success, otherwise 1
  */
 int func_ctrl_d(char *string, ssize_t read, int *stad_exit)
@@ -25,7 +24,7 @@ int func_ctrl_d(char *string, ssize_t read, int *stad_exit)
 	if (_strcmp(string, "\n") == 0)
 	{
 		*stad_exit = 0;
-		return (127);
+		return (0);
 	}
 	while (string[i] != '\n')
 	{
@@ -34,5 +33,5 @@ int func_ctrl_d(char *string, ssize_t read, int *stad_exit)
 		++i;
 	}
 	*stad_exit = 0;
-	return (127);
+	return (0);
 }
