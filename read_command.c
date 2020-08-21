@@ -29,7 +29,7 @@ char *read_command(char **env)
 		args = _parser(string);
 		for (i = 0; args[i]; i++)
 			num_arg++;
-		printf("stad_exit %d", stad_exit);
+
 		built_in(string, args, env, &stad_exit);
 		status = _path(args[0], args, env);
 		forkwaitexec(status, args, &count, &stad_exit);
