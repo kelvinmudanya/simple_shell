@@ -2,7 +2,6 @@
 
 /**
  * shell_loop - loop into functions that runs the shell
- * @argv: commands passed to the CL
  * @env: environment variable
  * Return: status of the proccess or 1 in error
  */
