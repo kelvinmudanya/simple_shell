@@ -10,7 +10,7 @@ void forkwaitexec(int status, char **args, int *count, int *stad_exit)
 {
 	if (status == 2)
 	{
-		if (access(args[0], X_OK) == 0)
+		if (access(args[0], F_OK) == 0)
 		{
 			if (fork() == 0)
 				execve(args[0], args, NULL);
@@ -18,7 +18,6 @@ void forkwaitexec(int status, char **args, int *count, int *stad_exit)
 				wait(NULL);
 			*stad_exit = 0;
 		}
-
 		if (access(args[0], F_OK) != 0)
 		{
 			print_string("sh: ");
@@ -28,16 +27,16 @@ void forkwaitexec(int status, char **args, int *count, int *stad_exit)
 			*stad_exit = 0;
 		}
 		if (access(args[0], F_OK) == 0 &&
-			 access(args[0], X_OK) != 0)
+		    access(args[0], X_OK) != 0)
 		{
-			print_string("sh: ");
-			print_count(count);
-			print_string(": ");
-			perror(args[0]);
-			*stad_exit = 0;
+		print_string("sh: ");
+		print_count(count);
+		print_string(": ");
+		perror(args[0]);
+		*stad_exit = 0;
 		}
-		if (access(args[0], F_OK | R_OK | X_OK) == -1)
-			free(args), args = NULL;
+	if (access(args[0], F_OK | R_OK | X_OK) == -1)
+		free(args), args = NULL;
 	}
 	free(args);
 }
