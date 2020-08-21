@@ -12,7 +12,7 @@ void built_in(char *string, char **argv, char **env, int *ex_it)
 	{
 		free(argv);
 		free(string);
-		exit(*ex_it);
+		exit(2);
 	}
 	if (_strcmp(argv[0], "env") == 0)
 		printenv(env, ex_it);
