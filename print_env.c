@@ -32,11 +32,11 @@ int printenv(char **env, char **argv)
  */
 void print_string(char *env)
 {
-	int i, print;
+	int i; /*print;*/
 
 	for (i = 0; env[i] != '\0'; i++)
 		;
-	print = write(STDOUT_FILENO, env, i);
-	if (print == EOF)
-		return;
+	write(STDOUT_FILENO, env, i);
+	/*if (print == EOF)
+	  return;*/
 }
