@@ -31,7 +31,7 @@ char *read_command(char **env)
 			num_arg++;
 
 		built_in(string, args, env, &stad_exit);
-		status = _path(args[0], args, env);
+		status = _path(args[0], args, env, &stad_exit);
 		forkwaitexec(status, args, &count, &stad_exit);
 		{
 			fflush(stdin);

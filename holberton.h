@@ -30,7 +30,7 @@ char *read_command(char **env);
 char **split_command(char *string);
 void forkwaitexec(int status, char **argv, int *count, int *stad_exit);
 void rm_new_line(char *string);
-int _path(char *args, char **argv, char **env);
+int _path(char *args, char **argv, char **env, int *stad_exit);
 char *print_path(char *der, char *args);
 char **_parser(char *string);
 int printenv(char **env, int *stad_exit);

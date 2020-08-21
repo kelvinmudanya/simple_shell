@@ -7,7 +7,7 @@
  * @env: environment variable
  * Return: 0 success
  */
-int _path(char *args, char **argv, char **env)
+int _path(char *args, char **argv, char **env, *stad_exit)
 {
 	int i;
 	char *tmp, *izq, *der;
@@ -30,6 +30,7 @@ int _path(char *args, char **argv, char **env)
 						execve(copy, argv, NULL);
 					else
 						wait(NULL);
+					*stad_exit = 2;
 					free(copy);
 					free(envcp);
 					return (0);
