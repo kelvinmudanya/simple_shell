@@ -21,6 +21,8 @@ int printenv(char **env, char **argv)
 		print_string(env[i]);
 		write(STDOUT_FILENO, "\n", 1);
 	}
+
+	env[i] = NULL;
 	return (0);
 }
 /**
