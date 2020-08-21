@@ -33,5 +33,5 @@ int func_ctrl_d(char *string, ssize_t read, int *stad_exit)
 		++i;
 	}
 	*stad_exit = 0;
-	return (127);
+	return (0);
 }
