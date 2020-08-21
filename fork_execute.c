@@ -4,7 +4,8 @@
  * @args: commands passed in CL
  * @status: receiving the status true or false
  * @count: variable that counts the commands passed
- * @stad_exit: integer
+ * @stad_exit: integer static
+ * Return: void
  */
 void forkwaitexec(int status, char **args, int *count, int *stad_exit)
 {

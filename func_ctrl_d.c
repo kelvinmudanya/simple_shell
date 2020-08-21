@@ -3,7 +3,7 @@
  * func_ctrl_d - allows use of ctrl d as way of shutting down shell
  * @string: the argument passed
  * @read: size of the saved string
- * @stad_exit: integer
+ * @stad_exit: integer static var
  * Return: 0 success, otherwise 1
  */
 int func_ctrl_d(char *string, ssize_t read, int *stad_exit)
