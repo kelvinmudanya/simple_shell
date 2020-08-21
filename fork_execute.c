@@ -27,16 +27,16 @@ void forkwaitexec(int status, char **args, int *count, int *stad_exit)
 			perror(args[0]);
 			*stad_exit = 0;
 		}
-		if (access(args[0], F_OK) == 0 && access(args[0], X_OK) != 0)
+		/*if (access(args[0], F_OK) == 0 && access(args[0], X_OK) != 0)
 		{
-			print_string("sh: ");
+			print_string("sh: 1");
 			print_count(count);
 			print_string(": ");
 			perror(args[0]);
 			*stad_exit = 0;
 		}
 		if (access(args[0], F_OK | R_OK | X_OK) == -1)
-			free(args), args = NULL;
+		free(args), args = NULL;*/
 	}
 	free(args);
 }
