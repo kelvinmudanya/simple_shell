@@ -18,11 +18,8 @@ void forkwaitexec(int status, char **args, int *count, int *stad_exit)
 				wait(NULL);
 			*stad_exit = 0;
 		}
-<<<<<<< HEAD
-		else if (access(args[0], F_OK) == 0)
-=======
+
 		if (access(args[0], F_OK) != 0)
->>>>>>> e3c4c8041b26dce2e5ad7a61b70898cfaba6c658
 		{
 			print_string("sh: ");
 			print_count(count);
