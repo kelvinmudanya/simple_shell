@@ -15,10 +15,6 @@ void sighandler(int sig)
 }
 
 
-/**
- * simple_print_shell - print message
- * @string: string to print
- */
 void simple_print_shell(char *string)
 {
 	int len;

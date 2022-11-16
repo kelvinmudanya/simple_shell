@@ -14,6 +14,7 @@ int shell_loop(char **env)
 	while (1 == 1)
 		;
 	free(args);
+	
 	return (0);
 
 }
