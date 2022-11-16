@@ -23,7 +23,7 @@ A simple shell project
 <li>How to manipulate the environment of the current process</li>
 <li>What is the difference between a function and a system call</li>
 <li>How to create processes</li>
-<li>What are the three prototypes of <code>main</code></li>
+<li>What are the three prototypes of <code>mai n</code></li>
 <li>How does the shell use the <code>PATH</code> to find the programs</li>
 <li>How to execute another program with the <code>execve</code> system call</li>
 <li>How to suspend the execution of a process until one of its children terminates</li>
